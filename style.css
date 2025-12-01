@@ -1,66 +1,85 @@
 /* Page Styling */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8f8f8;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
 }
 
 /* Flexbox Container */
 .cat-container {
-    display: flex;
-    flex-wrap: wrap;                /* Allows items to wrap on smaller screens */
-    justify-content: center;        /* Centers the items */
-    gap: 20px;                      /* Space between cards */
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 2em;
 }
 
 /* Individual Cat Breed Card */
 .cat-breed {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 280px;
-    padding: 15px;
-    text-align: center;
+  flex: 1 1 300px;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
+/* Hover Effect */
+.cat-breed:hover {
+  transform: scale(1.05);
+}
+
+/* Images */
 .cat-breed img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
+/* Headings */
 .cat-breed h3 {
-    margin-top: 10px;
-    color: #333;
+  margin: 0.5em 0;
+  color: #333;
 }
 
+/* Paragraphs */
 .cat-breed p {
-    color: #666;
-    font-size: 0.95rem;
+  margin: 0.5em 0 1em;
+  color: #666;
+  font-size: 0.95rem;
 }
 
 /* Learn More Button */
 .cat-breed a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #ffb6c1;
-    color: #333;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ffb6c1;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .cat-breed a:hover {
-    background: #ff8da1;
+  background: #ff8da1;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .cat-breed {
-        width: 90%; /* Stretch cards on smaller screens */
-    }
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .cat-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cat-breed {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
+
+
